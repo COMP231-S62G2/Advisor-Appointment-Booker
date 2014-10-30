@@ -6,10 +6,10 @@
     
     <table>
     <tr>
-    <td>
+    <td style="height: 26px">
      Appointment Title : 
     </td>
-    <td>
+    <td style="height: 26px; width: 261px">
         <asp:TextBox ID="txtTitle" runat="server"  size="30"></asp:TextBox>
     </td>
     </tr>
@@ -18,7 +18,7 @@
     <td>
      Appointment Text : 
     </td>
-    <td>
+    <td style="width: 261px">
         <asp:TextBox ID="txtText" runat="server"  TextMode="MultiLine" Rows="5" Columns ="30"></asp:TextBox>
     </td>
     </tr>
@@ -27,7 +27,7 @@
     <td>
      Appointment Date :  
     </td>
-    <td>
+    <td style="width: 261px">
         <asp:TextBox ID="txtDate" runat="server"  size="10"></asp:TextBox> (mm/dd/yy)
     </td>
     </tr>
@@ -36,7 +36,7 @@
     <td>
      Appointment  Time :  
     </td>
-    <td>
+    <td style="width: 261px">
         <asp:TextBox ID="txtTime" runat="server"  size="10"></asp:TextBox> (HH24:MM)
     </td>
     </tr>
@@ -45,18 +45,47 @@
     <td>
      Notify Hours Before :  
     </td>
-    <td>
+    <td style="width: 261px">
         <asp:TextBox ID="txtNHB" runat="server"  size="10"></asp:TextBox> 
     </td>
     </tr>
     
+    <tr>
+    <td>
+     Select Department:  
+    </td>
+    <td style="width: 261px">
+        <asp:Label ID="lblSelectedText" runat="server"></asp:Label>
+        <br />
+        <asp:DropDownList ID="DropDownList1" runat="server" 
+            onselectedindexchanged="DropDownList1_SelectedIndexChanged">
+            <asp:ListItem Selected="True"></asp:ListItem>
+            <asp:ListItem>School of Advancement</asp:ListItem>
+            <asp:ListItem>School of Enginnering Technology and Science</asp:ListItem>
+            <asp:ListItem>School of Communication</asp:ListItem>
+            <asp:ListItem>School of Hospitality and Tourism</asp:ListItem>
+            <asp:ListItem>School of Business</asp:ListItem>
+        </asp:DropDownList>
+        <br />
+       
+    </td>
+    </tr>
+
     </table>
     
     <p />
+        &nbsp;<p />
+        &nbsp;<p />
     <asp:Button ID="btnAdd" runat="server" Text="Add Appointment" 
             onclick="btnAdd_Click" />
-    <p />
+    <p style="height: 112px" />
     <asp:Label ID="lblMsg" runat="server" Text=""></asp:Label>
     
+    <p style="height: 112px" />
+        &nbsp;
+    
+    <script language="javascript" type="text/javascript">
+
+    </script>
 </asp:Content>
 
