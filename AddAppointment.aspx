@@ -55,10 +55,25 @@
      Select Department:  
     </td>
     <td style="width: 261px">
-        <asp:Label ID="lblSelectedText" runat="server"></asp:Label>
+        <asp:DropDownList ID="DropDownList1" runat="server">
+            <asp:ListItem Selected="True"></asp:ListItem>
+            <asp:ListItem>School of Advancement</asp:ListItem>
+            <asp:ListItem>School of Enginnering Technology and Science</asp:ListItem>
+            <asp:ListItem>School of Communication</asp:ListItem>
+            <asp:ListItem>School of Hospitality and Tourism</asp:ListItem>
+            <asp:ListItem>School of Business</asp:ListItem>
+        </asp:DropDownList>
         <br />
-        <asp:DropDownList ID="DropDownList1" runat="server" 
-            onselectedindexchanged="DropDownList1_SelectedIndexChanged">
+       
+    </td>
+    </tr>
+
+     <tr>
+    <td>
+     Select Advisor:  
+    </td>
+    <td style="width: 261px">
+        <asp:DropDownList ID="DropDownList2" runat="server">
             <asp:ListItem Selected="True"></asp:ListItem>
             <asp:ListItem>School of Advancement</asp:ListItem>
             <asp:ListItem>School of Enginnering Technology and Science</asp:ListItem>
