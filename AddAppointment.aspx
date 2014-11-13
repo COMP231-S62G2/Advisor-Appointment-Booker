@@ -1,5 +1,9 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="AddAppointment.aspx.cs" Inherits="AddAppointment" Title="Untitled Page" %>
 
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
+
+
+
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
     
     <h2> Add Appointment</h2>
@@ -23,12 +27,21 @@
     </td>
     </tr>
     
+         
     <tr>
     <td>
+     <cc1:ToolkitScriptManager ID="ToolkitScriptManager1" runat="server"></cc1:ToolkitScriptManager>
+
      Appointment Date :  
     </td>
     <td style="width: 261px">
-        <asp:TextBox ID="txtDate" runat="server"  size="10"></asp:TextBox> (mm/dd/yy)
+        <asp:TextBox ID="txtDate" runat="server"  size="10"></asp:TextBox> 
+          <asp:Button ID="btndate" runat="server" Text="..."/>
+            <cc1:CalendarExtender ID="Calendar1" PopupButtonID="btndate" runat="server" TargetControlID="txtDate"
+                Format="MM/dd/yy">
+            </cc1:CalendarExtender>
+            
+        
     </td>
     </tr>
     
@@ -55,7 +68,7 @@
      Select Department:  
     </td>
     <td style="width: 261px">
-        <asp:DropDownList ID="DropDownList1" runat="server">
+        <asp:DropDownList ID="DropDownList1" runat="server" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged" AutoPostBack="True">
             <asp:ListItem Selected="True"></asp:ListItem>
             <asp:ListItem>School of Advancement</asp:ListItem>
             <asp:ListItem>School of Enginnering Technology and Science</asp:ListItem>
@@ -74,12 +87,8 @@
     </td>
     <td style="width: 261px">
         <asp:DropDownList ID="DropDownList2" runat="server">
-            <asp:ListItem Selected="True"></asp:ListItem>
-            <asp:ListItem>School of Advancement</asp:ListItem>
-            <asp:ListItem>School of Enginnering Technology and Science</asp:ListItem>
-            <asp:ListItem>School of Communication</asp:ListItem>
-            <asp:ListItem>School of Hospitality and Tourism</asp:ListItem>
-            <asp:ListItem>School of Business</asp:ListItem>
+           
+            
         </asp:DropDownList>
         <br />
        
