@@ -20,7 +20,8 @@
                         onClientClick='return confirm("Do you really want to delete appointment")' Text="Delete"></asp:LinkButton>
                 </ItemTemplate>
             </asp:TemplateField>
-            
+            <asp:HyperLinkField DataNavigateUrlFields="appid" DataNavigateUrlFormatString="editappointment.aspx?appid={0}"
+                Text="Edit " />
         </Columns>
     </asp:GridView>
     <center>
