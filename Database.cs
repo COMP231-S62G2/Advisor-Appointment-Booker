@@ -10,7 +10,6 @@ public class Database
             return WebConfigurationManager.
                 ConnectionStrings["appointmentsConnectionString"].
                 ConnectionString;
-
         }
     }
 }

@@ -58,7 +58,7 @@ public class AppointmentsDAL
     }  // end of DeleteAppointment
 
 
-    public static String UpdateAppointment(string appid, string title, string text, string notifybeforehours)
+    public static String UpdateAppointment(string appid, string title, string text, DateTime appdate, string notifybeforehours)
     {
         SqlConnection con = new SqlConnection(Database.ConnectionString);
         try
@@ -69,6 +69,7 @@ public class AppointmentsDAL
             cmd.Parameters.AddWithValue("@appid", appid);
             cmd.Parameters.AddWithValue("@title", title);
             cmd.Parameters.AddWithValue("@text", text);
+            cmd.Parameters.AddWithValue("@appdate", appdate);
             cmd.Parameters.AddWithValue("@notifybeforehours", notifybeforehours);
            // cmd.Parameters.AddWithValue("@dept", dept);
             cmd.ExecuteNonQuery();
@@ -144,7 +145,7 @@ public class AppointmentsDAL
 
     }
 
-    public static DataTable SearchAppointments(String username,String  title, String text)
+    public static DataTable FilterAppointments(String username,String  title, String text)
     {
         SqlConnection con = new SqlConnection(Database.ConnectionString);
         try
